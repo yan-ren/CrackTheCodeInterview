@@ -138,3 +138,55 @@ Height Checker
 Find distance between given pairs of nodes in a binary tree
 22. Generate Parentheses
 311. Sparse Matrix Multiplication
+
+
+/*
+ * Given the layout of an office including desk locations of engineers,
+ * find the optimal location to put a coffee machine, such that the total
+ * distance each engineer needs to travel to refill their coffee is minimized.
+ */
+ /*
+    XOX|XXO
+    X|XCX|X
+    XOXXOXX
+ */
+ /*
+ 
+ */
+ 
+ class Point {
+     int x;
+     int y;
+     
+     public Point(int x, int y){
+         this.x = x;
+         this.y = y;
+     }
+ }
+ 
+ pulbic class Test {
+     
+     public static Point calculate(List<Point> points, [][]int map) {
+         int min_sum = 0;
+         int min_i = 0;
+         int min_j = 0;
+        for(int i=0; i < map.length; i++){
+            for(int j = 0; j < map[i].length;j++){
+                int sum = 0;
+                for (Point p :ponits){
+                    sum += Math.pow(p.x - i, 2) + Math.pow(p.y - j, 2);
+                }
+                if(sum < min_sum){
+                    min_sum = sum;
+                    min_i = i;
+                    min_j = j;
+                }
+            }
+        }
+        return new Point(min_i, min_j);
+     }
+     
+     public static Point midPoint(Point a, Point b){
+        return Point((a.x + b.x) / 2, (b.x+b.y) / 2);        
+     }
+ }
